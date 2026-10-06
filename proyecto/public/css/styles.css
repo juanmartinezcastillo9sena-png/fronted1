@@ -1,0 +1,79 @@
+:root{
+  --noche:#0A1A2E; --azul:#15314F; --hueso:#F6F5F1; --linea:#DAD6CC;
+  --verde:#2F6F5E; --texto:#15202B;
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'Hanken Grotesk',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--texto);background:var(--hueso);line-height:1.6;font-size:1rem}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15}
+:focus-visible{outline:2px solid var(--verde);outline-offset:3px}
+.contenedor{width:min(1160px,100% - 48px);margin-inline:auto}
+
+.btn{display:inline-block;padding:.75rem 1.4rem;border:1px solid currentColor;text-decoration:none;font-weight:500;font-size:.95rem}
+.btn-verde{background:var(--verde);border-color:var(--verde);color:#fff}
+.btn-verde:hover{background:#265c4e;border-color:#265c4e}
+.btn-block{display:block;width:100%;text-align:center;cursor:pointer;font:inherit;font-weight:500}
+.enlace{text-decoration:none;font-weight:500;border-bottom:1px solid transparent}
+.enlace:hover{border-color:currentColor}
+.enlace-verde{color:var(--verde);font-weight:500;text-decoration:none;border-bottom:1px solid var(--verde)}
+
+.site-header{background:var(--noche);color:var(--hueso);border-bottom:1px solid rgba(246,245,241,.14);position:sticky;top:0;z-index:10}
+.barra{display:flex;align-items:center;gap:2rem;height:72px}
+.marca{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-family:var(--serif);font-size:1.25rem;margin-right:auto}
+.marca img{height:36px;width:auto;filter:invert(1);mix-blend-mode:screen}
+.nav{display:flex;gap:1.75rem;font-size:.95rem}
+.nav a{text-decoration:none;opacity:.8}
+.nav a:hover{opacity:1}
+.acciones{display:flex;align-items:center;gap:1.25rem}
+.site-header .btn{border-color:rgba(246,245,241,.5)}
+.site-header .btn:hover{background:var(--hueso);color:var(--noche)}
+
+.hero{background:var(--noche);color:var(--hueso);padding:104px 0 112px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:96px;align-items:end}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);max-width:14ch;letter-spacing:-.01em}
+.lead{margin-top:1.75rem;max-width:46ch;font-size:1.15rem;color:rgba(246,245,241,.78)}
+.hero-cta{margin-top:2.5rem;display:flex;align-items:center;gap:2rem}
+.hero-datos div{border-top:1px solid rgba(246,245,241,.22);padding:1.25rem 0}
+.hero-datos div:last-child{border-bottom:1px solid rgba(246,245,241,.22)}
+.hero-datos dt{font-family:var(--serif);font-size:1.4rem}
+.hero-datos dd{color:rgba(246,245,241,.7);font-size:.95rem}
+
+.seccion{padding:104px 0}
+.seccion h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:3rem}
+.seccion-linea{border-top:1px solid var(--linea)}
+.lista-servicios{list-style:none}
+.lista-servicios li{display:grid;grid-template-columns:1fr 1.3fr auto;gap:2.5rem;align-items:baseline;padding:1.75rem 0;border-top:1px solid var(--linea)}
+.lista-servicios li:last-child{border-bottom:1px solid var(--linea)}
+.lista-servicios h3{font-size:1.5rem}
+.lista-servicios p{color:#4a5560;max-width:52ch}
+
+.dos-col{display:grid;grid-template-columns:.8fr 1.2fr;gap:96px}
+.dos-col h2{margin-bottom:0}
+.pasos{list-style:none}
+.pasos li{display:flex;gap:1.5rem;align-items:baseline;padding:1.5rem 0;border-top:1px solid var(--linea);font-size:1.15rem}
+.pasos li:last-child{border-bottom:1px solid var(--linea)}
+.pasos .n{font-family:var(--serif);font-size:1.6rem;color:var(--verde);min-width:2rem}
+
+.cierre{background:var(--azul);color:var(--hueso);padding:88px 0}
+.cierre-grid{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.cierre h2{font-size:clamp(1.8rem,3vw,2.4rem)}
+
+.site-footer{background:var(--noche);color:rgba(246,245,241,.75);padding:56px 0;font-size:.95rem}
+.pie{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.site-footer strong{color:var(--hueso);font-family:var(--serif);font-size:1.2rem;font-weight:400}
+.site-footer p{margin-top:.5rem}
+
+@media (max-width:900px){
+  .hero-grid,.dos-col{grid-template-columns:1fr;gap:56px}
+  .nav{display:none}
+  .lista-servicios li{grid-template-columns:1fr;gap:.6rem}
+  .hero,.seccion{padding:72px 0}
+}
+@media (max-width:520px){
+  .acciones .enlace{display:none}
+  .marca span{font-size:1.05rem}
+}
